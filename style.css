@@ -48,15 +48,20 @@ a { color: var(--brand-end); }
   text-align: center;
   padding: 64px 24px 80px;
 }
+/* Tema por app no herói */
+.hero--future { background: linear-gradient(140deg, #141416 0%, #201A0B 55%, #3A2E12 100%); }
+.hero--hub { background: linear-gradient(135deg, #2B2550, #141235); }
 .hero .logo {
   width: 88px; height: 88px;
   margin: 0 auto 22px;
   border-radius: 22px;
   background: rgba(255,255,255,0.14);
   display: flex; align-items: center; justify-content: center;
+  overflow: hidden;
 }
 .hero h1 { font-size: 40px; margin: 0 0 12px; }
 .hero p { font-size: 17px; line-height: 1.6; color: #EDEBFF; max-width: 520px; margin: 0 auto 28px; }
+.hero--future p { color: #EADFC4; }
 .hero .actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
 .btn {
   display: inline-block;
@@ -67,6 +72,7 @@ a { color: var(--brand-end); }
   font-weight: 600;
 }
 .btn-primary { background: #fff; color: var(--brand-end); }
+.hero--future .btn-primary { color: #B8720A; }
 .btn-ghost { color: #fff; border: 1px solid rgba(255,255,255,0.5); }
 
 .container { max-width: 960px; margin: -40px auto 0; padding: 0 24px 64px; }
@@ -94,6 +100,34 @@ a { color: var(--brand-end); }
 }
 .feature-card h3 { font-size: 16px; margin: 0 0 6px; }
 .feature-card p { font-size: 14px; color: var(--text-muted); line-height: 1.5; margin: 0; }
+
+/* ---- Hub: lista de apps ---- */
+.app-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 18px;
+}
+.app-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 20px;
+  text-decoration: none;
+  color: var(--text);
+  box-shadow: 0 8px 24px rgba(72, 52, 212, 0.06);
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+.app-card:hover { transform: translateY(-2px); box-shadow: 0 14px 30px rgba(72, 52, 212, 0.12); }
+.app-card .app-ico {
+  width: 60px; height: 60px; border-radius: 16px; flex: none;
+  display: flex; align-items: center; justify-content: center; overflow: hidden;
+}
+.app-card h3 { margin: 0 0 4px; font-size: 18px; }
+.app-card p { margin: 0; font-size: 14px; color: var(--text-muted); line-height: 1.45; }
+.app-card .chev { margin-left: auto; color: var(--text-muted); font-size: 22px; }
 
 .content {
   background: var(--card-bg);
